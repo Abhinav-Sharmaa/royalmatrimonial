@@ -1,7 +1,9 @@
+@import "./constants.scss";
+
 html,
 body {
   margin: 0;
-  font-family: 'Cabin',sans-serif;
+  font-family: "Cabin", sans-serif;
   font-weight: 400;
 }
 
@@ -14,12 +16,97 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.white-bg-button {
+  border: 0;
+  background-color: #fff;
+  color: #92243c !important;
+}
+////////////////////////////navbar///////////////////////////////////
+
+.dropdown-menu[data-bs-popper] {
+  border-radius: 0;
+  top: 98%;
+}
+.dropdown-menu {
+  background-color: $transparent_maroon;
+  .dropdown-item {
+    padding: 6px 22px 6px 20px;
+    font-size: 16px;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
   }
-  body {
-    color: white;
-    background: black;
+  .dropdown-item:hover {
+    background-color: #d9475c;
   }
+}
+
+// Footer Clients Carousel
+.carousel-indicators {
+  display: none;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+// footer social email link
+.Footer_lg_col {
+  a {
+    color: #fff !important;
+  }
+}
+
+p {
+  font-size: 0.875rem;
+}
+.list-group-item {
+  border: none;
+}
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  // h2 {
+  //   font-size: 0.875rem !important;
+  // }
+  h3 {
+    font-size: 0.875rem !important;
+  }
+  span {
+    font-size: 0.75rem !important;
+  }
+  p {
+    font-size: 0.75rem !important;
+  }
+
+  .Home_Page_Wrapper {
+    width: 100%;
+  }
+}
+
+.default-anchor {
+  text-decoration: none;
+  color: #fff;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.nav-tabs .nav-link.active {
+  /* color: var(--bs-nav-tabs-link-active-color); */
+  /* background-color: var(--bs-nav-tabs-link-active-bg); */
+  /* border-color: var(--bs-nav-tabs-link-active-border-color); */
+  border-bottom: 2px solid #d9475c;
+}
+.nav-tabs .nav-link{
+  color: $lightGrey_txt;
+}
+// Global
+.b_right {
+  border-right: 1px solid #bdbaba !important;
+}
+.toggle{
+  opacity: 1 !important;
 }

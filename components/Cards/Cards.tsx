@@ -1,27 +1,35 @@
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import CustomButton from '../Button/CustomButton';
+import classes from "./Card.module.scss";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+import CustomButton from "../Button/CustomButton";
 
-const HomeCard = () => {
+const HomeCard = (props: any) => {
+  let items = props.onTitle.subCategory;
+  let condition = props.onlistHeight;
+
   return (
-    <Card >
+    <Card className={`${classes.card} ${condition ? classes.redParent : ""}`}>
       <Card.Body>
-        <Card.Title>Free</Card.Title>
+        <Card.Title>{props.onTitle.category}</Card.Title>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Browse Profiles</ListGroup.Item>
-        <ListGroup.Item>Shortlist & Send Interest</ListGroup.Item>
-        <ListGroup.Item>Message and chat with unlimited users</ListGroup.Item>
-        <ListGroup.Item>Get up to 3x more matches daily</ListGroup.Item>
-        <ListGroup.Item>Unlock access to advanced search</ListGroup.Item>
-        <ListGroup.Item>View contact details</ListGroup.Item>
-        <ListGroup.Item>Make unlimited voice and video calls</ListGroup.Item>
+        {items.map((val: string) => {
+          return (
+            <ListGroup.Item key={val} className={condition ? classes.redCard : ""}>
+              {val}
+            </ListGroup.Item>
+          );
+        })}
       </ListGroup>
       <Card.Body>
-      <CustomButton onClick={() => console.log("tab")}>Get Started</CustomButton>
+        <CustomButton onClick={() => console.log("tab")}>
+          {props.onTitle.category === "Free"
+            ? "Register For Free"
+            : "Know more membership packages today"}
+        </CustomButton>
       </Card.Body>
     </Card>
   );
-}
+};
 
 export default HomeCard;
