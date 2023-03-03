@@ -1,0 +1,195 @@
+@import "../../styles/constants.scss";
+.cardWrapper{
+    margin-top: 3rem;
+    width: 75%;
+    img{
+        // width: 255px;
+        width: 100%;
+    }
+    SVG{
+        cursor: pointer;
+    }
+    .cardInfo{
+        padding: 20px 34px 10px 34px;
+        background-color: $light_grey_bg;
+        span{
+            font-size: 24px;    
+            color: $darkGrey_bg;
+        }
+        small{
+            font-size: 12px;
+            color: $darkGrey_bg;
+        }
+        small:nth-child(4){
+            float: right;
+        }
+       .lockIcon{
+        svg{
+            color: $red_bg; 
+            cursor: pointer;
+        }
+       }
+       .tickIcon{
+        svg{
+           color: #2e97ea;  
+           cursor: pointer;    
+         }
+        }
+        ul{
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 130px;
+            padding-top: 1rem;
+            li{
+                color: $darkGrey_bg;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .rightBox{
+        background-color: $light_grey_bg;
+        // color: $white_txt;
+        color: #c3c3c3;
+        text-align: center;
+        padding: 0;
+        // width: auto;
+        transition: all 0.75s;
+        &:hover{
+            background-color: rgb(52 73 94);
+        }
+        p{
+            line-height: 55px;
+            padding-left: 24px;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 0;
+        }
+        :hover{
+            background-color: $red_bg;
+        }
+        svg{
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+    }
+}
+.bg{
+    background: rgb(231, 230, 230);
+}   
+
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+    .cardWrapper{
+        margin-top: 3rem;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .cardInfo{
+            .UserName_Section{
+                min-height: 60px;
+            }
+
+        }
+
+        .rightBox{
+            display: flex;
+            width: 100%;
+            justify-content: end;
+            gap: 20px;
+            padding: 0% 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) and (min-width: 423px) {
+    .cardWrapper{
+        margin-top: 3rem;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .cardInfo{
+            .UserName_Section{
+                min-height: 60px;
+            }
+
+        }
+        .rightBox{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0rem 2rem;
+            p{
+                padding: 0;
+                text-align: center;
+                padding: 0rem 1rem;
+                svg{
+                    margin: 0%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 415px) {
+    .bg{
+        background-color: #2e97ea;
+    }
+    .cardWrapper{
+        margin-top: 3rem;
+        width: 85%;
+        img{
+            width: 100%;
+        }
+
+        .cardInfo{
+            .UserName_Section{
+                min-height: 50px;
+            }
+
+        }
+        .rightBox{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0rem 2rem;
+            p{
+                padding: 0;
+                text-align: center;
+                padding: 0rem 1rem;
+                svg{
+                    margin: 0%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 300px) {
+    .cardWrapper{
+
+        .cardInfo{
+            ul{
+                height: auto;
+            }
+        }
+        .rightBox{
+            p{
+                padding: 0rem 0.5rem;
+            }
+        }
+    }
+}
